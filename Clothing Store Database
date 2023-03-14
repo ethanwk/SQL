@@ -1,0 +1,30 @@
+/**Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.**/
+
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item_type TEXT, quantity INTEGER, price INTEGER, size TEXT);
+
+INSERT INTO clothing VALUES (1, "Socks", 50, 2.50, "L");
+INSERT INTO clothing VALUES (2, "Underwear", 25, 5, "M");
+INSERT INTO clothing VALUES (3, "Shorts", 15, 10, "L");
+INSERT INTO clothing VALUES (4, "ShirtS", 30, 7, "L");
+INSERT INTO clothing VALUES (5, "Pants", 30, 15, "L");
+INSERT INTO clothing VALUES (6, "Hats", 17, 20, "L");
+INSERT INTO clothing VALUES (7, "Jackets", 21, 30, "L");
+INSERT INTO clothing VALUES (8, "Sweaters", 19, 18, "L");
+INSERT INTO clothing VALUES (9, "Skirts", 90, 46, "S");
+INSERT INTO clothing VALUES (10, "Trunks", 50, 49, "M");
+INSERT INTO clothing VALUES (11, "Speedos", 100, 67, "S"); 
+INSERT INTO clothing VALUES (12, "Bikinis", 38, 93, "S");
+INSERT INTO clothing VALUES (13, "Toe Socks", 45, 1, "L");
+INSERT INTO clothing VALUES (14, "Bras", 17, 19, "M");
+INSERT INTO clothing VALUES (15, "Scarves", 88, 14, "S");
+
+--display the database ordered by price.
+SELECT * FROM clothing
+ORDER BY price asc;
+
+--what is the sum of the clothing items
+SELECT SUM (quantity) FROM clothing;
+ORDER BY price
+
+
