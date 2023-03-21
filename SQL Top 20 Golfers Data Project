@@ -1,0 +1,52 @@
+/* Created a table show casing the top 20 golfers in the world according to the OWGR data from March 21st, 2023*/
+
+CREATE TABLE golfers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    ranking INTEGER,
+    country TEXT);
+    
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Scottie Scheffler", "1", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("John Rahm", "2", "Spain"); 
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Rory McIlroy", "3", "Northern Ireland");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Patrick Cantlay", "4", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Cameron Smith", "5", "Australia");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Max Homa", "6", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Xander Schauffele", "7", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Will Zalatoris", "8", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Viktor Hovland", "9", "Norway");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Justin Thomas", "10", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Collin Morikawa", "11", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Tony Finau", "12", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Matt Fitzpatrick", "13", "England");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Jordan Spieth", "14", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Sam Burns", "15", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Tyrrell Hatton", "16", "England");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Cameron Young", "17", "United States");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Sungjae Im", "18", "Korea");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("Tom Kim", "19", "Korea");
+INSERT INTO golfers (fullname, ranking, country) VALUES ("HHideki Matsuyama", "20", "Japan"); 
+
+
+CREATE TABLE clubs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    golfer_id INTEGER,
+    club_id INTEGER,
+    degree_loft INTEGER);
+    
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("1", "3 Iron", "19");
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("2", "4 Iron", "21");
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("3", "5 Iron", "23.5");
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("4", "6 Iron", "26.5");
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("5", "7 Iron", "30.5");
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("6", "8 Iron", "35");
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("7", "9 Iron", "40");
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("8", "PW", "45");
+INSERT INTO clubs (golfer_id, club_id, degree_loft) VALUES ("9","AW", "50"); 
+
+SELECT golfers.fullname, clubs.club_id, clubs.degree_loft
+FROM golfers
+JOIN clubs
+ON golfers.id = clubs.golfer_id;
+
+
